@@ -41,9 +41,9 @@ Sigue este orden:
 
 ## Si vienes solo a levantar el entorno
 
-1. [Ejecución local](../puesta-en-marcha/ejecucion-local.md)
-2. [Problemas frecuentes](/broken/spaces/72x5UsSA7x1GSrPyaID8/pages/s9mcQQnmrbvQQCCgUHgd)
-3. [Estructura del repositorio](../puesta-en-marcha/estructura-del-repositorio.md)
+1. [ejecucion-local.md](../puesta-en-marcha/ejecucion-local.md "mention")
+2. [problemas-frecuentes.md](../puesta-en-marcha/problemas-frecuentes.md "mention")
+3. [estructura-del-repositorio.md](../puesta-en-marcha/estructura-del-repositorio.md "mention")
 
 {% hint style="info" %}
 La ruta cambia, pero el proyecto siempre se entiende mejor desde tres preguntas: qué datos guarda, qué valida y qué sincroniza.
