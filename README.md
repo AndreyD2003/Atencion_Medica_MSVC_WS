@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # NOVA_ing-AtencionMedica
 
 Plataforma de gestión clínica basada en microservicios, con una capa de Web Semántica para consultas avanzadas sobre conocimiento médico.
@@ -284,3 +285,7 @@ La capa semántica es el diferenciador del proyecto:
 - Ofrece una interfaz de consulta por lenguaje natural orientada a usuarios no expertos.
 
 Documentación específica: [docs/modulos/msvc-web-semantica.md](docs/modulos/msvc-web-semantica.md) y [docs/funcionalidades/consulta-semantica.md](docs/funcionalidades/consulta-semantica.md)
+=======
+# Page
+
+>>>>>>> 6547abc18b322df2357d81b2d204613dc70171e6
