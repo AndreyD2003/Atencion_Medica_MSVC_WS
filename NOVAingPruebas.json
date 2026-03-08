@@ -1,0 +1,278 @@
+{
+	"info": {
+		"_postman_id": "nova-ing-pruebas-v2",
+		"name": "NOVA.ing - Atencion Medica (Completo)",
+		"description": "Coleccion de pruebas para todos los microservicios del sistema NOVA, incluyendo Web Semantica y Gemini.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "MSVC-Medico (8080)",
+			"item": [
+				{
+					"name": "Listar Medicos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/medicos",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["medicos"]
+						}
+					}
+				},
+				{
+					"name": "Crear Medico",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombres\": \"Gregory\",\n    \"apellidos\": \"House\",\n    \"especialidad\": \"MEDICINA_GENERAL\",\n    \"telefono\": \"987654321\",\n    \"email\": \"house@hospital.com\",\n    \"dni\": \"12345678\",\n    \"estado\": \"ACTIVO\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/medicos",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["medicos"]
+						}
+					}
+				},
+				{
+					"name": "Detalle Medico",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/medicos/1",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["medicos", "1"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "MSVC-Paciente (8083)",
+			"item": [
+				{
+					"name": "Listar Pacientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/pacientes",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8083",
+							"path": ["pacientes"]
+						}
+					}
+				},
+				{
+					"name": "Crear Paciente",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombres\": \"Juan\",\n    \"apellidos\": \"Perez\",\n    \"fechaNacimiento\": \"1990-05-15\",\n    \"genero\": \"MASCULINO\",\n    \"dni\": \"87654321\",\n    \"telefono\": \"912345678\",\n    \"email\": \"juan.perez@email.com\",\n    \"direccion\": \"Av. Siempre Viva 123\",\n    \"estado\": \"ACTIVO\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8083/pacientes",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8083",
+							"path": ["pacientes"]
+						}
+					}
+				},
+				{
+					"name": "Agendar Cita (Desde Paciente)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fechaCita\": \"2023-12-01\",\n    \"horaInicio\": \"10:00:00\",\n    \"horaFin\": \"10:30:00\",\n    \"motivo\": \"Dolor de cabeza persistente\",\n    \"estado\": \"PENDIENTE\",\n    \"pacienteId\": 1,\n    \"medicoId\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8083/pacientes/agendar-cita",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8083",
+							"path": ["pacientes", "agendar-cita"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "MSVC-Cita (8081)",
+			"item": [
+				{
+					"name": "Listar Citas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/citas",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8081",
+							"path": ["citas"]
+						}
+					}
+				},
+				{
+					"name": "Detalle Cita Completo (Feign)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/citas/con-detalle/1",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8081",
+							"path": ["citas", "con-detalle", "1"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "MSVC-Diagnostico (8082)",
+			"item": [
+				{
+					"name": "Crear Diagnostico",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"descripcion\": \"Migraña severa por estrés\",\n    \"tipoDiagnostico\": \"ENFERMEDAD_CRONICA\",\n    \"fechaDiagnostico\": \"2023-12-01T10:30:00.000Z\",\n    \"citaId\": 1,\n    \"pacienteId\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8082/diagnosticos",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8082",
+							"path": ["diagnosticos"]
+						}
+					}
+				},
+				{
+					"name": "Listar Diagnosticos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/diagnosticos",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8082",
+							"path": ["diagnosticos"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "MSVC-Web-Semantica (8084)",
+			"item": [
+				{
+					"name": "1. Sincronizar Datos (TDB2)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/api/semantic/data/sync",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8084",
+							"path": ["api", "semantic", "data", "sync"]
+						},
+						"description": "Descarga datos de todos los microservicios y actualiza la base de datos RDF local."
+					}
+				},
+				{
+					"name": "2. Consulta Natural (Gemini)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"pregunta\": \"¿Cuales son los pacientes diagnosticados con enfermedad cronica?\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8084/api/semantic/nlp/query",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8084",
+							"path": ["api", "semantic", "nlp", "query"]
+						}
+					}
+				},
+				{
+					"name": "3. Consulta SPARQL Directa",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"query\": \"PREFIX onto: <http://nova.ing/ontology/> SELECT ?nombre ?apellido WHERE { ?p a onto:Paciente ; onto:nombres ?nombre ; onto:apellidos ?apellido . }\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8084/api/semantic/sparql/query",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8084",
+							"path": ["api", "semantic", "sparql", "query"]
+						}
+					}
+				}
+			]
+		}
+	]
+}
