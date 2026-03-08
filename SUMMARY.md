@@ -10,7 +10,6 @@
 * [Flujos principales](proyecto-nova/flujos-principales.md)
 * [Casos de uso principales](proyecto-nova/casos-de-uso-principales.md)
 * [Riesgos y puntos críticos](proyecto-nova/riesgos-y-puntos-criticos.md)
-* [Trazabilidad de la migración](proyecto-nova/trazabilidad-de-la-migracion.md)
 
 ## Puesta en marcha
 
@@ -40,7 +39,6 @@
 * [Consultas semánticas](capa-semantica/consultas-semanticas.md)
 * [Cuándo usar búsqueda natural y cuándo SPARQL](capa-semantica/cuando-usar-busqueda-natural-y-cuando-sparql.md)
 * [Checklist de consistencia semántica](capa-semantica/checklist-de-consistencia-semantica.md)
-* [Resultado de la revisión final](capa-semantica/resultado-de-la-revision-final.md)
 
 ## Frontend
 

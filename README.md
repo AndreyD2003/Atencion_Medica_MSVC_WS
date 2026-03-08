@@ -34,6 +34,3 @@ La documentación está separada por capas y por flujos. El material original qu
 * Contratos, validaciones y ejemplos.
 * Pasos de arranque del entorno.
 
-{% hint style="info" %}
-La documentación principal ya no depende de `Fuentes`. Si más adelante eliminas ese grupo, la estructura útil seguirá intacta.
-{% endhint %}

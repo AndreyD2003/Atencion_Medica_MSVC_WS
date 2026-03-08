@@ -42,13 +42,7 @@ Lee esto:
 4. [Checklist de consistencia semántica](../capa-semantica/checklist-de-consistencia-semantica.md)
 5. [Cuándo usar búsqueda natural y cuándo SPARQL](../capa-semantica/cuando-usar-busqueda-natural-y-cuando-sparql.md)
 
-## Si vas a revisar cobertura antes de borrar `Fuentes`
 
-Lee esto:
 
-1. [Trazabilidad de la migración](../proyecto-nova/trazabilidad-de-la-migracion.md)
-2. [Criterios de limpieza antes de borrar fuentes](/broken/spaces/72x5UsSA7x1GSrPyaID8/pages/6EMMrnrWy6w7tf1G6W7K)
 
-{% hint style="success" %}
-Esta página existe para reducir búsqueda. Si ya sabes el área afectada, aquí deberías encontrar el recorrido mínimo.
-{% endhint %}
+
