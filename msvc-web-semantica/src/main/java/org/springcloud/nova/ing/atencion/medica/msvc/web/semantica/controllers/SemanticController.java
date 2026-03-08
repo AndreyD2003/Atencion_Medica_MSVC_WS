@@ -2,6 +2,7 @@ package org.springcloud.nova.ing.atencion.medica.msvc.web.semantica.controllers;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springcloud.nova.ing.atencion.medica.msvc.web.semantica.dtos.DiagnosticoSyncDTO;
 import org.springcloud.nova.ing.atencion.medica.msvc.web.semantica.dtos.SyncRequestDTO;
 import org.springcloud.nova.ing.atencion.medica.msvc.web.semantica.services.BulkSyncService;
 import org.springcloud.nova.ing.atencion.medica.msvc.web.semantica.services.ISemanticService;
@@ -56,6 +57,20 @@ public class SemanticController {
             log.error("Error en sincronización: {}", e.getMessage());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("Error al sincronizar con el motor semántico.");
+        }
+    }
+
+    @PostMapping("/sync/diagnostico")
+    public ResponseEntity<String> sincronizarDiagnostico(@RequestBody DiagnosticoSyncDTO dto) {
+        log.info("Request recibida para sincronizar Diagnóstico ID: {}", dto.getId());
+        try {
+            semanticService.sincronizarDiagnostico(dto);
+            return ResponseEntity.status(HttpStatus.CREATED)
+                    .body("Diagnóstico integrado correctamente en el Grafo de Fuseki.");
+        } catch (Exception e) {
+            log.error("Error en sincronización de diagnóstico: {}", e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Error al sincronizar diagnóstico con el motor semántico.");
         }
     }
 

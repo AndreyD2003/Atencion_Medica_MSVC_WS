@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 
-@FeignClient(name = "msvc-paciente", url = "localhost:8083")
+@FeignClient(name = "msvc-paciente", url = "http://localhost:8083")
 public interface PacienteClient {
     @GetMapping("/pacientes")
     List<PacienteLoadDTO> listarTodos();

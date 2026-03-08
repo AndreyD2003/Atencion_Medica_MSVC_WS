@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.List;
 import java.util.Map;
 
-@FeignClient(name = "msvc-cita", url = "localhost:8081")
+@FeignClient(name = "msvc-cita", url = "http://localhost:8081")
 public interface CitaClient {
     @GetMapping("/citas")
     List<CitaLoadDTO> listarTodas();
